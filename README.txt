@@ -20,7 +20,7 @@ Utilizando:
 
 ## Bajar el repositorio a mi computadora:
 
-En el respositorio `https://github.com/maxiturchet/data_warehouse` presionar en el botón verde que dice "Code".
+En el respositorio [DATA_WAREHOUSE](https://github.com/maxiturchet/data_warehouse) presionar en el botón verde que dice "Code".
 - Si tenés la versión de escritorio de GitHub: podés clonar el respositorio y abrirlo desde tu editor de código.
 - Si no tenés la versión de escritorio de GitHub: podés descargar el zip directamente con todos los archivos 
 y arrastrarlos a tu editor de código.
