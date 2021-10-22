@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <a class="a-logo" title="Home" href="index.html"> <img class="logo" src='Recursos/logo.png' alt="logo"></a>        
+        <div class="menu">
+            <ul class="menu-contenedor">
+                <li id="contactos"><a href="index.html">Contactos </a><hr class="subrayado"></li>
+                <li id="companias"><a href="companias.html">Compañías </a><hr class="subrayado"></li>
+                <li id="usuarios-header"><a href="usuarios.html">Usuarios</a><hr class="subrayado"></li>
+                <li id="region-ciudad"><a href="region.html">Región / Ciudad</a><hr class="subrayado"></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="filtro-modal"></div>
+        <section class="modalBorrar">
+            <div class="modal">
+                <img class="img-modal" src="/recursos/svgs/modal.JPG" alt="img-modal">
+                <p class="modal-p">¿Seguro que desea eliminar el/los contacto/s seleccionado/s?</p>
+                <div class="contenedor-modal">
+                    <button class="modal-cancelar">Cancelar</button>
+                    <button class="modal-borrar">Eliminar</button>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-editor">
+            <div class="div-editor">
+                <p class="titulo-editar">Editar Contacto</p>
+                <div class="contenedor-contacto-edicion">
+                    <div class="foto-edicion">
+                        <img class="foto-perfil" src="/recursos/perfil.png" alt="foto-perfil">
+                        <img class="cam-perfil" src="/recursos/svgs/camera.svg" alt="cam-perfil">
+                    </div>
+                    <div class="datos-contacto-edicion contacto-edicion idContactoDiv">
+                        <label class="label-contacto" for="idContacto">Id Contacto<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="idContacto" id="idContacto">
+                    </div>
+                    <div class="datos-contacto-edicion contacto-edicion">
+                        <label class="label-contacto" for="contactoNombre">Nombre<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="contactoNombre" id="contactoNombre">
+                    </div>
+                    <div class="datos-contacto-edicion">
+                        <label class="label-contacto" for="contactoApellido">Apellido<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="contactoApellido" id="contactoApellido">
+                    </div>
+                    <div class="datos-contacto-edicion">
+                        <label class="label-contacto" for="cargoContacto">Cargo<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="cargoContacto" id="cargoContacto">
+                    </div>
+                    <div class="datos-contacto-edicion">
+                        <label class="label-contacto" for="emailContacto">Email<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="emailContacto" id="emailContacto">
+                    </div>
+                    <div class="datos-contacto-edicion companias-label">
+                        <label class="label-contacto" for="companiaContacto">Compañía<span class="span-label">*</span>  </label>
+                        <input class="input-contacto" type="text" name="companiaContacto" id="companiaContacto" placeholder="Ingresar compañía" autocomplete="off" >
+                        <p class='no-compania'>No hay coincidencias con ninguna compañía</p>
+                        <ul class="listaCompanias"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="div-editor-abajo-contacto">
+                <p class="parametrosFaltantes">¡Error! Hay información erronea o faltante en alguna de las celdas.</p>
+                <div class="contenedor-secundarios">
+                    <div class="region-interes">
+                        <div class="datos-contacto-edicion contacto-edicion-lugar">
+                            <label class="label-contacto" for="selectRegion">Región</label>
+                            <select name="selectRegion" id="selectRegion">
+                                <option value="">Seleccione una región</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-edicion contacto-edicion-lugar">
+                            <label class="label-contacto" for="selectPais">País</label>
+                            <select name="selectPais" id="selectPais">
+                                <option value="">Seleccione un país...</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-edicion contacto-edicion-lugar">
+                            <label class="label-contacto" for="selectCiudad">Ciudad</label>
+                            <select name="selectCiudad" id="selectCiudad">
+                                <option value="">Seleccione una ciudad...</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-edicion contacto-edicion-lugar">
+                            <label class="label-contacto" for="contactoDireccion">Dirección</label>
+                            <input class="input-contacto" type="select" name="contactoDireccion" id="contactoDireccion">
+                        </div>
+                        <div class="datos-contacto-agregar contacto-agregar-interes">
+                            <label class="label-contacto label-interes" for="porcentajeInteres">Interés</label>
+                            <div class="barra-select">
+                                <div class="barra-interes">
+                                    <div class="circulo-interes" id="circulo-interes"></div>
+                                    <div class="barra-divisiones" id="cero"></div>
+                                    <div class="barra-divisiones" id="veinticinco"></div>
+                                    <div class="barra-divisiones" id="veinticinco2"></div>
+                                    <div class="barra-divisiones" id="cincuenta"></div>
+                                    <div class="barra-divisiones" id="cincuenta2"></div>
+                                    <div class="barra-divisiones" id="setentaYCinco"></div>
+                                    <div class="barra-divisiones" id="setentaYCinco2"></div>
+                                    <div class="barra-divisiones" id="cien"></div>
+                                </div>
+                                <select name="porcentajeInteres" id="porcentajeInteres">
+                                    <option value="0">0%</option>
+                                    <option value="25">25%</option>
+                                    <option value="50">50%</option>
+                                    <option value="75">75%</option>
+                                    <option value="100">100%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-canal-contactos"></div>
+                </div>
+                <div class="button">
+                    <div class="contenedor-botones">
+                        <button class="borrar-contacto">Eliminar contacto</button>
+                        <button class="btn-edicion-contactos">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contenedor-agregar">
+            <div class="div-agregar">
+                <p class="titulo-agregar">Agregar Contacto</p>
+                <div class="contenedor-contacto-agregar">
+                    <div class="foto-agregar">
+                        <img class="foto-perfilA" src="/recursos/perfil.png" alt="foto-perfil">
+                        <img class="cam-perfil" src="/recursos/svgs/camera.svg" alt="cam-perfil">
+                    </div>
+                    <div class="datos-contacto-agregar contacto-agregar">
+                        <label class="label-contacto" for="contactoNombreA">Nombre<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="contactoNombreA" id="contactoNombreA">
+                    </div>
+                    <div class="datos-contacto-agregar">
+                        <label class="label-contacto" for="contactoApellidoA">Apellido<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="contactoApellidoA" id="contactoApellidoA">
+                    </div>
+                    <div class="datos-contacto-agregar">
+                        <label class="label-contacto" for="cargoContactoA">Cargo<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="cargoContactoA" id="cargoContactoA">
+                    </div>
+                    <div class="datos-contacto-agregar">
+                        <label class="label-contacto" for="emailContactoA">Email<span class="span-label">*</span></label>
+                        <input class="input-contacto" type="text" name="emailContactoA" id="emailContactoA">
+                    </div>
+                    <div class="datos-contacto-agregar companias-label">
+                        <label class="label-contacto" for="companiaContactoA">Compañía<span class="span-label">*</span>  </label>
+                        <input class="input-contacto" type="text" name="companiaContactoA" id="companiaContactoA" placeholder="Ingresar compañía" autocomplete="off" >
+                        <p class='no-companiaA'>No hay coincidencias con ninguna compañía</p>
+                        <ul class="listaCompaniasA"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="div-agregar-abajo-contacto">
+                <p class="parametrosFaltantesA">¡Error! Hay información erronea o faltante en alguna de las celdas.</p>
+                <div class="contenedor-secundarios">
+                    <div class="region-interesA">
+                        <div class="datos-contacto-agregar contacto-agregar-lugar">
+                            <label class="label-contacto" for="selectRegionAgregar">Región</label>
+                            <select name="selectRegionAgregar" id="selectRegionAgregar">
+                                <option value="seleccione">Seleccione una región</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-agregar contacto-agregar-lugar">
+                            <label class="label-contacto" for="selectPaisAgregar">País</label>
+                            <select name="selectPaisAgregar" id="selectPaisAgregar" disabled="disabled">
+                                <option value="seleccione">Seleccione un país...</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-agregar contacto-agregar-lugar">
+                            <label class="label-contacto" for="selectCiudadAgregar">Ciudad</label>
+                            <select name="selectCiudadAgregar" id="selectCiudadAgregar" disabled='disabled'>
+                                <option value="seleccione">Seleccione una ciudad...</option>
+                            </select>
+                        </div>
+                        <div class="datos-contacto-agregar contacto-agregar-lugar">
+                            <label class="label-contacto" for="contactoDireccionAgregar">Dirección</label>
+                            <input class="input-contacto" type="select" name="contactoDireccionAgregar" id="contactoDireccionAgregar" placeholder="Ingresa una dirección" disabled='disabled'>
+                        </div>
+                        <div class="datos-contacto-agregar contacto-agregar-interes">
+                            <label class="label-contacto label-interes" for="porcentajeInteres">Interés</label>
+                            <div class="barra-select">
+                                <div class="barra-interesA">
+                                    <div class="circulo-interes" id="circulo-interesA"></div>
+                                    <div class="barra-divisiones" id="ceroA"></div>
+                                    <div class="barra-divisiones" id="veinticincoA"></div>
+                                    <div class="barra-divisiones" id="veinticinco2A"></div>
+                                    <div class="barra-divisiones" id="cincuentaA"></div>
+                                    <div class="barra-divisiones" id="cincuenta2A"></div>
+                                    <div class="barra-divisiones" id="setentaYCincoA"></div>
+                                    <div class="barra-divisiones" id="setentaYCinco2A"></div>
+                                    <div class="barra-divisiones" id="cienA"></div>
+                                </div>
+                                <select name="porcentajeInteres" id="porcentajeInteresA">
+                                    <option value="0">0%</option>
+                                    <option value="25">25%</option>
+                                    <option value="50">50%</option>
+                                    <option value="75">75%</option>
+                                    <option value="100">100%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-canal-contactosA">
+                        <div class="canal-contactos">
+                            <div class="datos-contacto-agregar contacto-agregar-canal">
+                                <label for="canalContacto0" class="label-contacto">Canal de contacto</label>
+                                <select name="canalContacto0" id="canalContacto0" class="canalContacto">
+                                    <option value="seleccione">Seleccione un canal...</option>
+                                    <option value="email">Email</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="llamada">Llamada</option>
+                                    <option value="linkedin">Linkedin</option>
+                                    <option value="mensaje">Mensaje</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="whatsapp">Whatsapp</option>
+                                </select>
+                            </div>
+                            <div class="datos-contacto-agregar contacto-agregar-canal">
+                                <label for="canalInfo0" class="label-contacto">Cuenta de usuario</label>
+                                <input type="select" name="canalInfo0" id="canalInfo0" class="canalInfo" placeholder="@ejemplo" disabled='disabled'>
+                            </div>
+                            <div class="datos-contacto-agregar contacto-agregar-canal">
+                                <label for="canalPreferencia0" class="label-contacto">Preferencias</label>
+                                <select name="canalpreferencia0" id="canalPreferencia0" class="canalPreferencia" disabled='disabled'>
+                                    <option value="sinPreferencias">Sin preferencias</option>
+                                    <option value="canalFavorito">Canal favorito</option>
+                                    <option value="noMolestar">No molestar</option>
+                                </select>
+                            </div>
+                            <div class="btnAgregarCanalA">
+                                <button class="agregar-canalA"><span class="span-masA">+</span><span class="agregar-textoA">Agregar canal</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button">
+                    <div class="contenedor-botones-agregar">
+                        <button class="cancelar-agregar-contacto">Cancelar</button>
+                        <button class="btn-agregar-contactos">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        <section class="encabezado">
+            <div class="titulo-encabezado">
+                <h3>Contactos</h3>
+            </div>
+            <div class="contenedor-busqueda-contactos">
+                <div class="contenedor-barra">
+                    <div class="barra-btnFiltro">
+                        <div class="borde-barra">
+                            <input class="busqueda" type="text" name="busqueda" id="busqueda" autocomplete="off">
+                        </div>
+                        <button type="button" class="btn-lupa"><img class="lupa" src="/recursos/svgs/search.png" alt="lupa"></button>
+                    </div>      
+                </div>
+                <div class="contenedor-botones-contactos">
+                    <button type="button" class="btn-importar"><img class="importar-contactos" src="/recursos/svgs/upload.png" alt="importar"></button>
+                    <div class="contenedor-exportar">
+                        <p>Exportar contactos</p><img class="arrow-down" src="/recursos/svgs/arrow-down.png" alt="arrow-down">
+                        <div class="exportar-desplegado">
+                            <ul class="exportar-lista">
+                                <li>Exportar seleccionados</li>
+                                <li>Todos los filtrados</li>          
+                            </ul>
+                        </div>
+                    </div>                    
+                    <button type="button" class="btn-agregar-contacto">Agregar contacto</button>
+                </div>
+            </div>
+            <section class="contenedor-filtro">
+                <div class="filtro">
+                    <p class='etiqueta'>Argentina</p>
+                    <img src="recursos/svgs/cruz.svg" alt="equis">
+                </div>
+            </section>
+            <section class="contenedor-seleccionados">
+                <div class="seleccionados"></div>
+                <div class="eliminar-seleccionados">
+                    <img class="img-eliminados" src="/recursos/svgs/trash.png" alt="trash">
+                    <p class='etiqueta-eliminar'>Eliminar contactos</p>
+                </div>
+            </section>
+        </section>   
+        <section class="contenedor-main">
+            <div class="contenedor-cabeceras">
+                <div class="check-cabecera">
+                    <input type="checkbox" name="check" id="check">
+                </div>    
+                <div class="contactos-cabecera">
+                    <p class="titulo-cabecera titulo-contacto" id="nombre_contacto">Contacto <img class="double-arrow" src="/recursos/svgs/double-arrow.svg" alt="sort"></p>     
+                </div>
+                <div class="pais-cabecera">
+                    <p class="titulo-cabecera" id="id_pais">País/Región <img class="double-arrow" src="/recursos/svgs/double-arrow.svg" alt="sort"></p>
+                </div>
+                <div class="compania-cabecera">
+                    <p class="titulo-cabecera" id="id_compania">Compañía <img class="double-arrow" src="/recursos/svgs/double-arrow.svg" alt="sort"></p>
+                </div>
+                <div class="cargo-cabecera">
+                    <p class="titulo-cabecera" id="cargo_contacto">Cargo <img class="double-arrow" src="/recursos/svgs/double-arrow.svg" alt="sort"></p>      
+                </div>
+                <div class="canal-cabecera">
+                    <p class="titulo-cabecera titulo-canal">Canal Preferido</p>
+                </div>
+                <div class="interes-cabecera">
+                    <p class="titulo-cabecera" id="interes_contacto">Interés <img class="double-arrow" src="/recursos/svgs/double-arrow.svg" alt="sort"></p>
+                </div>
+                <div class="acciones-cabecera">
+                    <p class="titulo-cabecera titulo-acciones">Acciones</p>
+                </div>
+            </div>
+        </section>
+    </main>   
+    <script src="scripts/index.js"></script>  
+</body>
+</html>

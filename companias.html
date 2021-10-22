@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <header>
+        <a class="a-logo" title="Home" href="index.html"> <img class="logo" src='Recursos/logo.png' alt="logo"></a>        
+
+        <div class="menu">
+            <ul class="menu-contenedor">
+                <li id="contactos"><a href="index.html">Contactos </a><hr class="subrayado"></li>
+                <li id="companias"><a href="companias.html">Compañías </a><hr class="subrayado"></li>
+                <li id="usuarios-header"><a href="usuarios.html">Usuarios</a><hr class="subrayado"></li>
+                <li id="region-ciudad"><a href="region.html">Región / Ciudad</a><hr class="subrayado"></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor-editor">
+            <div class="div-editor">
+                <p class="titulo-editar">Editar Compañía</p>
+                <div class="contenedor-compania-edicion">
+                    <div class="id-compania">
+                        <label class="label-compania" id="label-id" for="idCompania">Id</label>
+                        <input class="input-compania" type="text" name="idCompania" id="idCompania" readonly>
+                    </div>
+                    <div class="datos-compania-edicion compania-edicion">
+                        <label class="label-compania" for="companiaNombre">Compania</label>
+                        <input class="input-compania" type="text" name="companiaNombre" id="companiaNombre">
+                    </div>
+                    <div class="datos-compania-edicion">
+                        <label class="label-compania" for="ciudadCompania">Ciudad</label>
+                        <input class="input-compania" type="text" name="ciudadCompania" id="ciudadCompania">
+                        <p class="error-ciudad-editar">Ciudad inexistente en la base de datos.</p>
+                    </div>
+                    <div class="datos-compania-edicion">
+                        <label class="label-compania" for="direccionCompania">Dirección</label>
+                        <input class="input-compania" type="text" name="direccionCompania" id="direccionCompania">
+                    </div>
+                    <div class="datos-compania-edicion">
+                        <label class="label-compania" for="emailCompania">Email</label>
+                        <input class="input-compania" type="email" name="emailCompania" id="emailCompania">
+                    </div>
+                    <div class="datos-compania-edicion">
+                        <label class="label-compania" for="telefonoCompania">Telefono</label>
+                        <input class="input-compania" type="text" name="telefonoCompania" id="telefonoCompania">
+                    </div>
+                </div>
+            </div>
+            <div class="div-editor-abajo">
+                <button class="btn-edicion">Guardar cambios</button>
+            </div>
+        </section>
+        <section class="contenedor-agregar">
+            <div class="div-agregar">
+                <p class= "titulo-agregar">Agregar Compañía</p>
+                <div class="contenedor-compania-agregar">
+                    <div class="datos-compania-agregar compania-edicion">
+                        <label class="label-compania" for="companiaNombre">Compania</label>
+                        <input class="input-compania" type="text" name="companiaNombre" id="companiaNombre">
+                        <p class="error-compania">La compañía ya existe en la base de datos.</p>
+                    </div>
+                    <div class="datos-compania-agregar" id="div-input-ciudad">
+                        <label class="label-compania" for="ciudadCompania">Ciudad</label>
+                        <input class="input-compania" type="text" name="ciudadCompania" id="ciudadCompania">
+                        <p class="error-ciudad">Ciudad inexistente en la base de datos.</p>
+                    </div>
+                    <div class="datos-compania-agregar">
+                        <label class="label-compania" for="direccionCompania">Dirección</label>
+                        <input class="input-compania" type="text" name="direccionCompania" id="direccionCompania">
+                    </div>
+                    <div class="datos-compania-agregar">
+                        <label class="label-compania" for="emailCompania">Email</label>
+                        <input class="input-compania" type="email" name="emailCompania" id="emailCompania">
+                    </div>
+                    <div class="datos-compania-agregar">
+                        <label class="label-compania" for="telefonoCompania">Telefono</label>
+                        <input class="input-compania" type="text" name="telefonoCompania" id="telefonoCompania">
+                    </div>
+                </div>
+            </div>
+            <div class="div-agregar-abajo">
+                <div class="button">
+                    <button class="btn-nueva-compania">Agregar compañía</button>
+                </div>
+            </div>
+        </section>
+        <section class="encabezado-compania">
+            <div class="titulo-encabezado-usuario">
+                <h3>Compañías</h3>
+            </div>
+            <div class="titulo-encabezado-compania">
+                <button class = "btn-agregar-compania">Agregar</button>
+            </div>
+        </section>
+        <section class="contenedor-main-companias">
+            <section class="companias-tabla">
+                <div class="contenedor-companias-cabecera"> 
+                    <div class="companias-nombre-cabecera">
+                        <p class="cabecera-compania">Nombre</p>  
+                    </div>
+                    <div class="compania-ciudad-cabecera">
+                        <p class="cabecera-compania">Ciudad</p>
+                    </div>
+                    <div class="compania-direccion-cabecera">
+                        <p class="cabecera-compania">Dirección</p>
+                    </div>
+                    <div class="compania-email-cabecera">
+                        <p class="cabecera-compania">Email</p>
+                    </div>
+                    <div class="compania-telefono-cabecera">
+                        <p class="cabecera-compania">Teléfono</p>
+                    </div>
+                    <div class="compania-acciones-cabecera">
+                        <p class="cabecera-acciones">Acciones</p>
+                    </div>
+                </div>             
+            </section>
+        </section>
+    </main>
+    <script src="scripts/companias.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://cdn.bootcss.com/flag-icon-css/2.8.0/css/flag-icon.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <a class="a-logo" title="Home" href="index.html"> <img class="logo" src='Recursos/logo.png' alt="logo"></a>        
+
+        <div class="menu">
+            <ul class="menu-contenedor">
+                <li id="contactos"><a href="index.html">Contactos </a><hr class="subrayado"></li>
+                <li id="companias"><a href="companias.html">Compañías </a><hr class="subrayado"></li>
+                <li id="usuarios-header"><a href="usuarios.html">Usuarios</a><hr class="subrayado"></li>
+                <li id="region-ciudad"><a href="region.html">Región / Ciudad</a><hr class="subrayado"></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor-agregar-region">
+            <div class="div-agregar-region">
+                <p>Agregar Región</p>
+                <div class="container-region">
+                    <div class="datos-agregar-region">
+                        <label class="label-region nombre-region" for="nombreRegion">Nombre región</label>
+                        <input class="input-region" type="text" name="nombreRegion" id="nombreRegion">
+                    </div>
+                </div>
+            </div>
+            <div class="div-agregar-abajo-region">
+                <button class="btn-add-region">Agregar Región</button>
+            </div>
+        </section>
+        <section class="contenedor-agregar-pais">
+            <div class="div-agregar-pais">
+                <p>Agregar País</p>
+                <div class="container-pais">
+                    <div class="datos-agregar-pais">
+                        <label class="label-region nombre-region" for="nombreRegionPais">Nombre región</label>
+                        <input class="input-region" type="text" name="nombreRegionPais" id="nombreRegionPais" readonly>
+                    </div>
+                    <div class="datos-agregar-pais">
+                        <label class="label-region nombre-pais" for="nombrePais">Nombre país</label>
+                        <input class="input-region" type="text" name="nombrePais" id="nombrePais">
+                    </div>
+                    <div class="datos-agregar-pais agregar-bandera">
+                        <label class="label-region" for="isoBandera">Bandera <a href="https://www.nationsonline.org/oneworld/country_code_list.htm">Alpha 2-Code</a></label>
+                        <input class="input-region" type="text" name="isoBandera" id="isoBandera">
+                    </div>
+                </div>
+            </div>
+            <div class="div-agregar-abajo-pais">
+                <button class="btn-add-pais">Agregar Pais</button>
+            </div>
+        </section>
+        <section class="contenedor-agregar-ciudad">
+            <div class="div-agregar-ciudad">
+                <p>Agregar Ciudad</p>
+                <div class="container-ciudad">
+                    <div class="datos-agregar-ciudad">
+                        <label class="label-region nombre-pais" for="nombrePaisCiudad">Nombre país</label>
+                        <input class="input-region" type="text" name="nombrePaisCiudad" id="nombrePaisCiudad" readonly>
+                    </div>
+                    <div class="datos-agregar-ciudad">
+                        <label class="label-region nombre-ciudad" for="nombreCiudad">Nombre ciudad</label>
+                        <input class="input-region" type="text" name="nombreCiudad" id="nombreCiudad">
+                    </div>
+                </div>
+            </div>
+            <div class="div-agregar-abajo-ciudad">
+                <button class="btn-add-ciudad">Agregar Ciudad</button>
+            </div>
+        </section>
+        <section class="contenedor-editor">
+            <div class="div-editor">
+                <p class="titulo-editar">Editar Region</p>
+                <div class="contenedor-datos-edicion">
+                    <div class="idEd">
+                        <label id="label-id" for="idEdLugar">Id</label>
+                        <input class="input-region" type="text" name="idEdLugar" id="idEdLugar" readonly>
+                    </div>
+                    <div class="datos-region-edicion region-edicion">
+                        <label class="label-region" for="idRegionEd">Id Region</label>
+                        <input class="input-region" type="text" name="idRegionEd" id="idRegionEd">
+                    </div>
+                    <div class="datos-region-edicion bandera-iso">
+                        <label class="label-region" for="banderaIso">Bandera ISO-Code</label>
+                        <input class="input-region" type="text" name="banderaIso" id="banderaIso">
+                    </div>
+                    <div class="datos-region-edicion">
+                        <label class="label-region nombre-lugar" for="nombreLugar">Nombre Pais</label>
+                        <input class="input-region" type="text" name="nombreLugar" id="nombreLugar">
+                    </div>
+                </div>
+            </div>
+            <div class="div-editor-abajo">
+                <button class="btn-edicion">Guardar cambios</button>
+            </div>
+        </section>
+        <section class="encabezado-region">
+            <div class="titulo-encabezado-region">
+                <h3>Region/Ciudad</h3> 
+            </div>
+            <div class="contenedor-btn-agregar-region">
+                <button class="btn-region">Agregar region</button>
+            </div>
+        </section>
+        <section class="arbol-region">
+            <ul class="contenedor-region"></ul>
+        </section>
+    </main>
+    <script src="scripts/region.js"></script>   
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "datawarehouse",
+  "version": "1.0.0",
+  "description": "herramienta que permita a una compañía de Marketing administrar todos los contactos de sus clientes para sus campañas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "datawarehouse"
+  },
+  "keywords": [
+    "datawarehouse",
+    "acamica",
+    "tp4"
+  ],
+  "author": "maxiturchet@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "flag-icon-css": "^3.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.12",
+    "sequelize": "^6.6.5"
+  }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <header>
+        <a class="a-logo" title="Home" href="index.html"> <img class="logo" src='Recursos/logo.png' alt="logo"></a>        
+
+        <div class="menu">
+            <ul class="menu-contenedor">
+                <li id="contactos"><a href="index.html">Contactos </a><hr class="subrayado"></li>
+                <li id="companias"><a href="companias.html">Compañías </a><hr class="subrayado"></li>
+                <li id="usuarios-header"><a href="usuarios.html">Usuarios</a><hr class="subrayado"></li>
+                <li id="region-ciudad"><a href="region.html">Región / Ciudad</a><hr class="subrayado"></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor-editor">
+            <div class="div-editor">
+                <p class="titulo-editar">Editar usuario</p>
+                <div class="contenedor-datos-edicion">
+                    <div class="foto-edicion">
+                        <img src="recursos/perfil.png" alt="foto-edicion">
+                    </div>
+                    <div class="idEd">
+                        <label id="label-id" for="idEd">Id</label>
+                        <input class="input-usuario" type="text" name="idEd" id="idEd" readonly>
+                    </div>
+                    <div class="datos-usuario-edicion usuario-edicion">
+                        <label class="label-usuario" for="usuarioEd">Usuario</label>
+                        <input class="input-usuario" type="text" name="usuarioEd" id="usuarioEd">
+                    </div>
+                    <div class="datos-usuario-edicion usuario-nombre">
+                        <label class="label-usuario" for="nombreEd">Nombre</label>
+                        <input class="input-usuario" type="text" name="nombreEd" id="nombreEd">
+                    </div>
+                    <div class="datos-usuario-edicion usuario-apellido">
+                        <label class="label-usuario" for="apellidoEd">Apellido</label>
+                        <input class="input-usuario" type="text" name="apellidoEd" id="apellidoEd">
+                    </div>
+                    <div class="datos-usuario-edicion usuario-email">
+                        <label class="label-usuario" for="emailEd">Email</label>
+                        <input class="input-usuario" type="email" name="emailEd" id="emailEd">
+                    </div>
+                    <div class="datos-usuario-edicion usuario-perfil">
+                        <label class="label-usuario" for="perfilEd">Perfil</label>
+                        <input class="input-usuario" type="text" name="perfilEd" id="perfilEd">
+                    </div>
+                    <div class="datos-usuario-edicion">
+                        <label class="label-usuario" for="passwordEd">Contraseña</label>
+                        <input class="input-usuario" type="password" name="passwordEd" id="passwordEd">
+                    </div>
+                </div>
+            </div>
+            <div class="div-editor-abajo">
+                <button class="btn-edicion">Guardar cambios</button>
+            </div>
+        </section>
+        <section class="encabezado-usuarios">
+            <div class="titulo-encabezado-usuario">
+                <h3>Usuarios</h3>
+            </div>
+        </section>
+        <section class="contenedor-main-usuarios">
+            <section class="usuarios-tabla">
+                <div class="contenedor-usuarios-cabecera"> 
+                    <div class="usuarios-nombre-cabecera">
+                        <p class="titulo-cabecera cabecera-nombre">Nombre</p>  
+                    </div>
+                    <div class="usuarios-usuario-cabecera">
+                        <p class="titulo-cabecera cabecera-usuario">Usuario</p>  
+                    </div>
+                    <div class="usuarios-perfil-cabecera">
+                        <p class="titulo-cabecera">Perfil</p>
+                    </div>
+                    <div class="usuarios-acciones-cabecera">
+                        <p class="titulo-cabecera acciones-cabecera">Acciones</p>
+                    </div>
+                </div>             
+            </section>
+            <section class="agregar-usuario">
+                <div class="titulo-crear-usuario">
+                    <h3>Crear usuario</h3>
+                </div>
+                <form action=""  class="agregar-usuario-form">
+                    <p class="parametro-inexistente">Error al agregar usuario. Parámetros incorrectos o faltantes.</p>
+                    <div class="contendor-usuario">
+                        <div class="datos-usuario div-crear-usuario">
+                            <label class="label-usuario" for="usuario">Usuario</label>
+                            <input class="input-usuario" type="text" name="usuario" id="usuario">
+                        </div>
+                        <p class="error-usuario">El usuario ingresado ya existe.</p>
+                    </div>
+
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="nombre">Nombre</label>
+                        <input class="input-usuario" type="text" name="nombre" id="nombre-usuario">
+                    </div>
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="apellido">Apellido</label>
+                        <input class="input-usuario" type="text" name="apellido" id="apellido">
+                    </div>
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="email">Email</label>
+                        <input class="input-usuario" type="email" name="email" id="email">
+                    </div>
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="perfil">Perfil</label>
+                        <input class="input-usuario" type="text" name="perfil" id="perfil">
+                    </div>
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="password">Contraseña</label>
+                        <input class="input-usuario" type="password" name="password" id="password">
+                    </div>
+                    <div class="datos-usuario">
+                        <label class="label-usuario" for="repetirPass">Repetir Contraseña</label>
+                        <input class="input-usuario" type="password" name="repetirPass" id="repetirPass">
+                    </div>
+                </form>
+                <button class="btn-agregar-usuario">Ingresar</button>
+            </section>
+        </section>
+    </main>
+    <script src="scripts/usuarios.js"></script>
+</body>
+</html>
