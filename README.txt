@@ -20,7 +20,7 @@ Utilizando:
 
 ## Bajar el repositorio a mi computadora:
 
-En el respositorio `https://github.com/maxiturchet/data_warehouse.git` presionar en el botón verde que dice "Code".
+En el respositorio `https://github.com/maxiturchet/data_warehouse` presionar en el botón verde que dice "Code".
 - Si tenés la versión de escritorio de GitHub: podés clonar el respositorio y abrirlo desde tu editor de código.
 - Si no tenés la versión de escritorio de GitHub: podés descargar el zip directamente con todos los archivos 
 y arrastrarlos a tu editor de código.
@@ -33,7 +33,7 @@ Luego, al presionar en "admin" en MySQL se abrirá una página de PHPMyAdmin con
 
 ## Instalar las dependencias y paquetes
 
-Estando en el editor de código con el repositorio agregado, abrir la terminal en la carpeta [Server](https://github.com/maxiturchet/data_warehouse/tree/main/server). 
+Estando en el editor de código con el repositorio agregado, abrir la terminal en la carpeta [Server](https://github.com/maxiturchet/data_warehouse/tree/main/backend/server). 
 Podés hacer esto haciendo click derecho en el archivo y presionando en la opción "Open in integrated Terminal".
 Para poder agregar la carpeta "node_modules" y disponer de los paquetes necesarios para usar el servicio tenés que escribir en la terminal:
 
@@ -43,18 +43,18 @@ Al presionar ENTER debería comenzar la instalación de los paquetes y dependenc
 
 ## Configurar la base de datos
 
-1. Es necesario editar el archivo [sequelize.js](https://github.com/maxiturchet/data_warehouse/blob/main/database/config/sequelize.js)
+1. Es necesario editar el archivo [sequelize.js](https://github.com/maxiturchet/data_warehouse/blob/main/backend/database/config/sequelize.js)
 y cambiar los datos para que coincida con tu configuración, la estructura es
 (**mysql://user:password@host:port/database**).
 
 2. Ahora es necesario importar en PHPMyAdmin los datos de la base de datos. 
 También podés agregar tus propios datos, pero importar la base de datos te dará una idea de como está organizada la base de datos. 
-En la página de PHPMyAdmin ir a la pestaña "Importar" y ahí seleccionar el archivo: [data_warehouse.sql](https://github.com/maxiturchet/data_warehouse/blob/main/database/sql_queries/data_warehouse.sql).
+En la página de PHPMyAdmin ir a la pestaña "Importar" y ahí seleccionar el archivo: [data_warehouse.sql](https://github.com/maxiturchet/data_warehouse/tree/main/backend/database/sql_queries).
 
 
 ## Hora de correr el servidor!
 
-Ir al directorio [Server](https://github.com/maxiturchet/delilah_resto/tree/main/server) en tu editor de código,
+Ir al directorio [Server](https://github.com/maxiturchet/data_warehouse/tree/main/backend/server) en tu editor de código,
 hacé click derecho en el archivo "app.js" y seleccioná "Open in integrated Terminal". 
 Se abrirá una terminal en la cual tenemos que escribir:
 
